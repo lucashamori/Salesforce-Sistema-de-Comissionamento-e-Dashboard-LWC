@@ -147,7 +147,7 @@ O projeto mantém 100% de cobertura de testes, garantindo segurança para futura
 
 ## 🚀 Como testar este projeto na sua Org
 
-1. Clone este repositório: `git clone https://github.com/seu-usuario/salesforce-comission-dashboard.git`
+1. Clone este repositório: `https://github.com/lucashamori/Salesforce-Sistema-de-Comissionamento-e-Dashboard-LWC.git`
 2. Autorize sua Org no Salesforce CLI: `sf org login web -a minha-org`
 3. Faça o deploy dos metadados: `sf project deploy start -d force-app`
 4. Adicione o componente `dashboardVendas` a uma Lightning App Page através do Lightning App Builder.
