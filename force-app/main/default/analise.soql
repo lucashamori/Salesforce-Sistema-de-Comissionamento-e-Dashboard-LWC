@@ -1,0 +1,3 @@
+SELECT Status__c, COUNT(Id) Total_Vendas, SUM(Valor__c) Faturamento, SUM(Comissao__c) Comissoes_Pagas
+FROM Venda__c
+GROUP BY Status__c

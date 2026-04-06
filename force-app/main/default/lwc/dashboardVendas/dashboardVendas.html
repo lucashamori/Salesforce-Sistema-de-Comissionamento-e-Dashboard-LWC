@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Dashboard Financeiro de Vendas" icon-name="standard:dashboard">
+        
+        <div class="slds-m-around_medium">
+            <template if:true={dadosVendas}>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    
+                    <template for:each={dadosVendas} for:item="dado">
+                        <div key={dado.status} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-bottom_medium">
+                            <div class="slds-box slds-theme_default slds-box_shadow">
+                                <h2 class="slds-text-heading_medium slds-m-bottom_small slds-text-color_success">
+                                    Status: {dado.status}
+                                </h2>
+                                <p class="slds-text-title_caps slds-m-bottom_xx-small">Total de Vendas</p>
+                                <p class="slds-text-heading_small slds-m-bottom_small">{dado.totalVendas}</p>
+                                
+                                <p class="slds-text-title_caps slds-m-bottom_xx-small">Faturamento</p>
+                                <p class="slds-text-heading_small slds-m-bottom_small">
+                                    <lightning-formatted-number value={dado.faturamento} format-style="currency" currency-code="BRL"></lightning-formatted-number>
+                                </p>
+                                
+                                <p class="slds-text-title_caps slds-m-bottom_xx-small">Comissões a Pagar</p>
+                                <p class="slds-text-heading_small slds-text-color_error">
+                                    <lightning-formatted-number value={dado.comissoes} format-style="currency" currency-code="BRL"></lightning-formatted-number>
+                                </p>
+                            </div>
+                        </div>
+                    </template>
+
+                </div>
+            </template>
+            
+            <template if:true={erro}>
+                <p class="slds-text-color_error">Erro ao carregar dados.</p>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>
