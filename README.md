@@ -128,6 +128,18 @@ listaVendas.add(new Venda__c(Name = 'Venda 008 - Treinamento', Valor__c = 1200, 
 // Comando mágico que insere as 8 vendas no banco de dados de uma só vez
 insert listaVendas;
 ```
+
+Abaixo, o resultado da query analítica rodada diretamente no VS Code, comprovando o agrupamento correto de faturamento por status:
+
+```sql
+SELECT Status__c, COUNT(Id) Total_Vendas, SUM(Valor__c) Faturamento, SUM(Comissao__c) Comissoes_Pagas
+FROM Venda__c
+GROUP BY Status__c
+```
+
+<img width="463" height="194" alt="image" src="https://github.com/user-attachments/assets/e6354d21-1490-420b-94e4-71cbd31961cd" />
+
+
 ### Dashboard Final (LWC)
 
 Interface renderizada no Salesforce Lightning Experience, proporcionando uma visão clara de:
